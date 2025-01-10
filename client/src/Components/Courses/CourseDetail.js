@@ -39,22 +39,22 @@ const CourseDetail = () => {
 
   if (course.id) {
     courseDetail = <div className="wrap">
-      <h2>Course Detail</h2>
+      <h2>Detalles del Curso</h2>
       <div className="main--flex">
         <div>
-          <h3 className="course--detail--title">Course</h3>
+          <h3 className="course--detail--title">Curso</h3>
           <h4 className="course--name">{course.title}</h4>
           {course.User
-            ? (<p>By {course.User.firstName} {course.User.lastName}</p>)
+            ? (<p>Impartido por: {course.User.firstName} {course.User.lastName}</p>)
             : null
           }
           <ReactMarkdown>{course.description}</ReactMarkdown>
         </div>
         <div>
-          <h3 className="course--detail--title">Estimated Time</h3>
+          <h3 className="course--detail--title">Tiempo Estimado</h3>
           <p>{course.estimatedTime}</p>
 
-          <h3 className="course--detail--title">Materials Needed</h3>
+          <h3 className="course--detail--title">Materiales Necesarios</h3>
           <ul className="course--detail--list">
             <ReactMarkdown>{course.materialsNeeded}</ReactMarkdown>
           </ul>
@@ -87,14 +87,14 @@ const CourseDetail = () => {
         <div className="actions--bar">
           <div className="wrap">
             {authUser && (authUser.id === course.User.id) ?
-              <Link to={`/courses/${id}/update`} className="button">Update Course</Link>
+              <Link to={`/courses/${id}/update`} className="button">Modificar Curso</Link>
               : null
             }
             {authUser && (authUser.id === course.User.id) ?
-              <button className="button" onClick={handleDelete}>Delete Course</button>
+              <button className="button" onClick={handleDelete}>Borrar Curso</button>
               : null
             }
-            <Link to='/' className="button button-secondary">Return to List</Link>
+            <Link to='/' className="button button-secondary">Regresar a la lista</Link>
           </div>
         </div>
         {courseDetail}

@@ -105,7 +105,7 @@ const UpdateCourse = () => {
     isLoading ?
       <Loading />
       : <div className="wrap">
-        <h2>Update Course</h2>
+        <h2>Modificar Curso</h2>
         {errors.length ?
           <div className="validation--errors">
             <h3>Validation Errors</h3>
@@ -118,24 +118,24 @@ const UpdateCourse = () => {
         <form>
           <div className="main--flex">
             <div>
-              <label htmlFor="courseTitle">Course Title</label>
+              <label htmlFor="courseTitle">Titulo del Curso</label>
               <input id="courseTitle" name="title" type="text" value={title} onChange={onChange} />
 
-              <p>By {courseUserFirstName} {courseUserLastName}</p>
+              <p>Impartido por: {courseUserFirstName} {courseUserLastName}</p>
 
-              <label htmlFor="courseDescription">Course Description</label>
+              <label htmlFor="courseDescription">Descripcion</label>
               <textarea id="courseDescription" name="description" value={description} onChange={onChange}></textarea>
             </div>
             <div>
-              <label htmlFor="estimatedTime">Estimated Time</label>
+              <label htmlFor="estimatedTime">Tiempo Estimado</label>
               <input id="estimatedTime" name="estimatedTime" type="text" value={estimatedTime} onChange={onChange} />
 
-              <label htmlFor="materialsNeeded">Materials Needed</label>
+              <label htmlFor="materialsNeeded">Requerimentos</label>
               <textarea id="materialsNeeded" name="materialsNeeded" value={materialsNeeded} onChange={onChange}></textarea>
             </div>
           </div>
-          <button className="button" type="submit" onClick={submit}>Update Course</button>
-          <button className="button button-secondary" onClick={cancel}>Cancel</button>
+          <button className="button" type="submit" onClick={submit}>Modificar Curso</button>
+          <button className="button button-secondary" onClick={cancel}>Cancelar</button>
         </form>
       </div>
   )

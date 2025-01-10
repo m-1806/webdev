@@ -1,86 +1,83 @@
+// Description: This file contains the main application logic for the REST API project.
 'use strict';
 
-// load modules
+// Import necessary modules
 const express = require('express');
 const morgan = require('morgan');
 const { sequelize } = require('./models');
 const cors = require('cors');
 
-// variable to enable global error logging
+// Enable global error logging if the environment variable is set
 const enableGlobalErrorLogging = process.env.ENABLE_GLOBAL_ERROR_LOGGING === 'true';
 
+// Import routes
 const userRouter = require('./routes/users');
 const courseRouter = require('./routes/courses');
 
-// create the Express app
+// Initialize Express app
 const app = express();
 
-// setup morgan which gives us http request logging
+// Configure HTTP request logging
 app.use(morgan('dev'));
 
-// set up cors 
+// Enable CORS for the frontend
 app.use(
   cors({
-    origin: 'http://localhost:3000', // Frontend origin
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed HTTP methods
-    allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
-    credentials: true, // If using cookies or HTTP Authentication
+    origin: 'http://localhost:3000',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
   })
 );
 
-// Handle preflight requests explicitly (optional but good practice)
+// Handle preflight requests
 app.options('*', cors());
 
-// set up Express to work with JSON
+// Parse JSON payloads
 app.use(express.json());
 
-// setup a friendly greeting for the root route
+// Root route
 app.get('/', (req, res) => {
-  res.json({
-    message: 'Welcome to the REST API project!',
-  });
+  res.json({ message: 'Welcome to the REST API project!' });
 });
 
-// Add routes
+// Register routes
 app.use('/api', userRouter);
 app.use('/api', courseRouter);
 
-// send 404 if no other route matched
+// Handle 404 errors
 app.use((req, res) => {
-  res.status(404).json({
-    message: 'Route Not Found',
-  });
+  res.status(404).json({ message: 'Route Not Found' });
 });
 
-// setup a global error handler
+// Global error handler
 app.use((err, req, res, next) => {
   if (enableGlobalErrorLogging) {
     console.error(`Global error handler: ${JSON.stringify(err.stack)}`);
   }
-
   res.status(err.status || 500).json({
     message: err.message,
     error: {},
   });
 });
 
-// set our port
+// Set server port
 app.set('port', process.env.PORT || 5001);
 
-// Test the database connection
+// Test database connection
 (async () => {
   try {
     await sequelize.authenticate();
-    console.log('Connection has been established successfully.');
+    console.log('Database connection successful.');
   } catch (error) {
-    console.error('Unable to connect to the database: ', error);
+    console.error('Database connection error:', error);
   }
 })();
 
-// start listening on our port
+// Start the server
 sequelize.authenticate()
   .then(() => {
     const server = app.listen(app.get('port'), () => {
-      console.log(`Express server is listening on port ${server.address().port}`);
+      console.log(`Server is running on port ${server.address().port}`);
     });
   });

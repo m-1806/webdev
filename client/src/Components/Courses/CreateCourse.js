@@ -79,25 +79,25 @@ const CreateCourse = () => {
       <form>
         <div className="main--flex">
           <div>
-            <label htmlFor="courseTitle">Course Title</label>
+            <label htmlFor="courseTitle">Titulo del Curso</label>
             <input id="courseTitle" name="courseTitle" type="text" value={courseTitle} onChange={onChange} />
 
             {/* Use current authenticated user's first name and last name as course author */}
             <p>By {authUser.firstName} {authUser.lastName}</p>
 
-            <label htmlFor="courseDescription">Course Description</label>
+            <label htmlFor="courseDescription">Descripcion</label>
             <textarea id="courseDescription" name="courseDescription" value={courseDescription} onChange={onChange}></textarea>
           </div>
           <div>
-            <label htmlFor="estimatedTime">Estimated Time</label>
+            <label htmlFor="estimatedTime">Tiempo Estimado</label>
             <input id="estimatedTime" name="estimatedTime" type="text" value={estimatedTime} onChange={onChange} />
 
-            <label htmlFor="materialsNeeded">Materials Needed</label>
+            <label htmlFor="materialsNeeded">Requerimentos</label>
             <textarea id="materialsNeeded" name="materialsNeeded" value={materialsNeeded} onChange={onChange}></textarea>
           </div>
         </div>
-        <button className="button" type="submit" onClick={submit}>Create Course</button>
-        <button className="button button-secondary" onClick={cancel}>Cancel</button>
+        <button className="button" type="submit" onClick={submit}>Crear Curso</button>
+        <button className="button button-secondary" onClick={cancel}>Cancelar</button>
       </form>
     </div >
 

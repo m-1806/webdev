@@ -1,3 +1,4 @@
+//  Description: This file contains the Course model definition and associations.
 const { Model, DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {

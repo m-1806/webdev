@@ -50,23 +50,23 @@ const UserSignIn = () => {
 
   return (
     <div className="form--centered">
-      <h2>Sign In</h2>
+      <h2>Inicia Sesion</h2>
       {errors.length ?
         <div className="validation--errors">
-          <h3>Sign in unsuccessful</h3>
-          <p>Please check your email address and password and try again.</p>
+          <h3>Error</h3>
+          <p>Checa tu email o contraseña.</p>
         </div>
         : null
       }
       <form>
-        <label htmlFor="emailAddress">Email Address</label>
+        <label htmlFor="emailAddress">Email</label>
         <input id="emailAddress" name="emailAddress" type="email" value={emailAddress} onChange={onChange} />
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">Contraseña</label>
         <input id="password" name="password" type="password" value={password} onChange={onChange} />
-        <button className="button" type="submit" onClick={submit}>Sign In</button>
-        <button className="button button-secondary" onClick={cancel}>Cancel</button>
+        <button className="button" type="submit" onClick={submit}>Inicia Sesion </button>
+        <button className="button button-secondary" onClick={cancel}>Cancelar</button>
       </form>
-      <p>Don't have a user account? Click here to <Link to='/signup'>sign up!</Link></p>
+      <p>No tienes cuenta?  <Link to='/signup'>Registrate!</Link></p>
 
     </div>
   );

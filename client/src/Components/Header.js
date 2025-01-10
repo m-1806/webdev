@@ -9,17 +9,17 @@ const Header = () => {
   return (
     <header>
       <div className="wrap header--flex">
-        <h1 className="header--logo"><Link to='/'>Courses</Link></h1>
+        <h1 className="header--logo"><Link to='/'>CURSOS ESCOM</Link></h1>
         <nav>
           {authUser ?
             <ul className="header--signedin">
-              <li>Welcome, {authUser.firstName} {authUser.lastName}!</li>
-              <li><Link to='/signout'>Sign Out</Link></li>
+              <li>Bienvenido, {authUser.firstName} {authUser.lastName}!</li>
+              <li><Link to='/signout'>Salir</Link></li>
             </ul>
             :
             <ul className="header--signedout">
-              <li><Link to='/signup'>Sign Up</Link></li>
-              <li><Link to='/signin'>Sign In</Link></li>
+              <li><Link to='/signup'>Registro</Link></li>
+              <li><Link to='/signin'>Iniciar Sesion</Link></li>
             </ul>
           }
         </nav>

@@ -1,3 +1,4 @@
+// Used to interact with the database
 'use strict';
 
 const sqlite3 = require('sqlite3');

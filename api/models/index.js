@@ -1,3 +1,4 @@
+// Used to import all models and associate them with each other
 'use strict';
 
 const fs = require('fs');

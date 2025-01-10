@@ -1,3 +1,4 @@
+// Initiate the database with the data from data.json
 'use strict';
 
 const promiseFinally = require('promise.prototype.finally');

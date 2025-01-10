@@ -1,3 +1,4 @@
+// Desc: Middleware to handle async functions
 exports.asyncHandler = (cb) => {
   return async (req, res, next) => {
     try {

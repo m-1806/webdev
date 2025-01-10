@@ -1,3 +1,4 @@
+// This file contains the User model and its associations with the Course model.
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 

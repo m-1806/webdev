@@ -1,3 +1,4 @@
+// Description: This file contains the routes for the users endpoint.
 const express = require('express');
 
 const router = express.Router();

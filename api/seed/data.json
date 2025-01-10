@@ -1,3 +1,4 @@
+// This file contains the seed data for the application. It is used to populate the database with initial data.
 {
   "users": [
     {

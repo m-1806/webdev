@@ -1,3 +1,4 @@
+// This file contains the routes for the courses resource. The routes are mounted at /api/courses.
 const express = require('express');
 
 const router = express.Router();
