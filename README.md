@@ -9,15 +9,13 @@ Este proyecto es una aplicación web full stack diseñada para la gestión de cu
 - Actualizar sus propios cursos (si están autorizados).
 - Eliminar sus propios cursos (si están autorizados).
 
-La interfaz del usuario y las funcionalidades están diseñadas de acuerdo con los mockups proporcionados en las carpetas `/mockups` y `/markup`.
-
 ## Funcionalidades y Explicación del Código
 
 La aplicación se divide en dos partes principales: **cliente** y **servidor**.
 
 ### Cliente
 
-El cliente, construido con React, utiliza React Router para manejar la navegación y Context API para gestionar el estado global del usuario autenticado. Algunas características clave incluyen:
+El cliente, construido con React, utiliza React Router para manejar la navegación. Algunas características clave incluyen:
 
 - **Autenticación**: Los usuarios pueden registrarse e iniciar sesión. Una vez autenticados, su estado se almacena en un contexto global para facilitar la autenticación en las demás rutas.
 - **Gestión de cursos**: Los usuarios pueden ver todos los cursos disponibles. Si están autenticados, pueden crear, actualizar o eliminar cursos.
