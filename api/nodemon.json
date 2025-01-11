@@ -1,4 +1,3 @@
-// Used to configure nodemon to watch for changes in the api folder and restart the server when changes are detected.
 {
   "restartable": "rs",
   "ignore": [

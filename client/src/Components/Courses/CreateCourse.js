@@ -66,7 +66,7 @@ const CreateCourse = () => {
 
   return (
     <div className="wrap">
-      <h2>Create Course</h2>
+      <h2>Crear Curso</h2>
       {errors.length ?
         <div className="validation--errors">
           <h3>Validation Errors</h3>

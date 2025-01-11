@@ -1,4 +1,3 @@
-//file contains the configuration settings for the Sequelize ORM.
 {
   "development": {
     "username": "root",
