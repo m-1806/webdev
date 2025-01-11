@@ -77,5 +77,3 @@ Ejecuta la aplicación en modo de desarrollo.\
 Abre [http://localhost:3000](http://localhost:3000) para ver la aplicación en el navegador.
 
 ---
-
-¡Explora, prueba y personaliza esta aplicación para adaptarla a tus necesidades!
